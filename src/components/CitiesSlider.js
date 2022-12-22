@@ -1,5 +1,5 @@
 import React from "react";
-// import './test.js';
+import classNames from "classnames";
 class CitiesSlider extends React.Component {
     constructor(props) {
       super(props);
@@ -39,8 +39,7 @@ class CitiesSlider extends React.Component {
       if (activeSlide >= length) activeSlide = 0;
       this.setState({ activeSlide, prevSlide });
     }
-    //classNameOne = "slider" + "s--ready:" +sliderReady
-    // 
+    
     render() {
       const { activeSlide, prevSlide, sliderReady } = this.state;
       return (
@@ -49,7 +48,7 @@ class CitiesSlider extends React.Component {
           <div className="slider__slides">
             {this.props.slides.map((slide, index) => (
               <div
-              className="`slider__slide s--${activeSlide===index}`"
+            
                 className={classNames('slider__slide', { 's--active': activeSlide === index, 's--prev': prevSlide === index  })}
                 key={slide.city}
                 >
